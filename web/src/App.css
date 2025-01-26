@@ -11,6 +11,15 @@
 
 .main {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   gap: 10px;
 }
+
+.box {
+  box-shadow: 1px red;
+}
+/* .box > img {
+  width: 300px;
+  height: 400px;
+  object-fit: cover;
+} */
