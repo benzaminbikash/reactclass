@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 function Slider() {
   // image[0]
+  // 4-1=3
   const image = [
     "https://i.pinimg.com/474x/3a/75/35/3a75353acbc6f6c7e009a41447b94448.jpg",
     "https://i.pinimg.com/236x/ef/52/12/ef5212d8bd2a650ea315536c25435503.jpg",
@@ -11,10 +12,18 @@ function Slider() {
   const [index, setIndex] = useState(0);
   const selectImage = image[index];
   const handleImage = () => {
-    setIndex(index + 1);
+    if (index < image.length - 1) {
+      setIndex(index + 1);
+    } else {
+      alert("You are in last image.");
+    }
   };
   function handlePreviousImage() {
-    setIndex(index - 1);
+    if (index > 0) {
+      setIndex(index - 1);
+    } else {
+      alert("You are in first image.");
+    }
   }
   return (
     <>

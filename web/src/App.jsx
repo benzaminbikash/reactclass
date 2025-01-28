@@ -1,12 +1,9 @@
 import React from "react";
-import Slider from "./day1/Slider";
-import Index from "./day2/Index";
+import Index from "./day4/Index";
+import Class from "./day4/Class";
 
 function App() {
-  return (
-    // <Slider />;
-    <Index />
-  );
+  return <Class />;
 }
 
 export default App;
