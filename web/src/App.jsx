@@ -1,9 +1,8 @@
 import React from "react";
-import Index from "./day4/Index";
-import Class from "./day4/Class";
+import Index from "./day5/Index";
 
 function App() {
-  return <Class />;
+  return <Index />;
 }
 
 export default App;
