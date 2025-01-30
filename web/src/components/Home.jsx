@@ -1,19 +1,38 @@
-import React from "react";
+import React, { forwardRef } from "react";
 
-function Home() {
+function Home(props, ref) {
   return (
-    <div>
-      <h1 className="font-bold text-xl">Home</h1>
-      <p>
-        Home Lorem ipsum dolor sit amet consectetur adipisicing elit. Non
-        ducimus possimus saepe repellat nostrum illo? Odio quae error natus
-        ipsam corrupti incidunt facilis eum libero tempore necessitatibus iure
-        maxime aliquam ipsum fugiat consequatur est, rem ullam. Ipsum vitae iste
-        placeat est ducimus perferendis repellat, aperiam explicabo eius
-        assumenda nobis aut.
-      </p>
-    </div>
+    <input
+      ref={ref}
+      type="text"
+      placeholder="Enter Your Data"
+      className="border "
+    />
   );
 }
 
-export default Home;
+// export default forwardRef(Home);
+
+
+
+// import React, { useEffect, useRef } from "react";
+// import Event from "./day5/Event";
+// import Home from "./components/Home";
+
+// // useRef
+
+// function App() {
+//   const dataRef = useRef(null);
+//   function handleFunction() {
+//     // dataRef.current.focus();
+//     dataRef.current.value = 100;
+//   }
+//   return (
+//     <>
+//       <Home ref={dataRef} />
+//       <button onClick={handleFunction}>Click Me</button>
+//     </>
+//   );
+// }
+
+// export default App;
