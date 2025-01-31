@@ -1,28 +1,38 @@
-// useReducer=>complex
-// useState=>simple
+// import React, { useContext } from "react";
+// import { USERCONTEXT } from "./context/UserContext";
 
-import React, { useReducer, useState } from "react";
+// function App() {
+//   const [name, setName] = useContext(USERCONTEXT);
+//   return (
+//     <div>
+//       App
+//       <h1>{name}</h1>
+//       <button onClick={() => setName("tilak karki")}>Change Name</button>
+//     </div>
+//   );
+// }
+
+// export default App;
+
+// // useReducer
+// // useContext Api
+// // todo list
+// // input=>add data display, delete, update
+
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router";
+import Home from "./pages/Home";
+import About from "./pages/About";
 
 function App() {
-  function reducer(state, action) {
-    console.log(state, action);
-    if (action.type == "INC") {
-      return { counter: state.counter + 1 };
-    }
-  }
-  const initialState = {
-    counter: 0,
-    name: "Ram",
-    color: "red",
-  };
-  const [data, dispatch] = useReducer(reducer, initialState);
   return (
-    <div>
-      <h1>Counter App</h1>
-      <h1>{data.counter}</h1>
-      <button onClick={() => dispatch({ type: "INC" })}>Increase</button>
-      <button onClick={() => dispatch({ type: "INC" })}>DECREASE</button>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
+
 export default App;
