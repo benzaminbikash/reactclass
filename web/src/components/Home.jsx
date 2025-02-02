@@ -13,8 +13,6 @@ function Home(props, ref) {
 
 // export default forwardRef(Home);
 
-
-
 // import React, { useEffect, useRef } from "react";
 // import Event from "./day5/Event";
 // import Home from "./components/Home";

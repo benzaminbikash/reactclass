@@ -1,13 +1,41 @@
-import React from "react";
-import { Link, NavLink } from "react-router";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router";
+import Navbar from "../components/Navbar";
 
 function Home() {
+  const navigate = useNavigate();
+  const [data3, setData] = useState([]);
+  async function fetchApi() {
+    const response = await fetch("https://fakestoreapi.com/products");
+    const result = await response.json();
+    setData(result);
+  }
+  useEffect(() => {
+    fetchApi();
+  }, []);
+  //
+
   return (
-    <div>
-      Home
-      <a href="/about">Go to about page through anchor tag </a>
-      <NavLink to="/about">Go to About Page</NavLink>
-    </div>
+    <>
+
+      <div className="flex flex-wrap justify-between ">
+        {data3.map((item, index) => {
+          return (
+            <div
+              onClick={() =>
+                navigate(`/product/${item.id}`, {
+                  state: item,
+                })
+              }
+              className="w-[300px] shadow-lg"
+            >
+              <h1>{item.title}</h1>
+              <img className="h-[300px] w-full " src={item.image} alt="" />
+            </div>
+          );
+        })}
+      </div>
+    </>
   );
 }
 
