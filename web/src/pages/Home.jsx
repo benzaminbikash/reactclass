@@ -17,13 +17,12 @@ function Home() {
 
   return (
     <>
-
       <div className="flex flex-wrap justify-between ">
         {data3.map((item, index) => {
           return (
             <div
               onClick={() =>
-                navigate(`/product/${item.id}`, {
+                navigate(`productdetail/${item.id}`, {
                   state: item,
                 })
               }

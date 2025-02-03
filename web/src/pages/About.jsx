@@ -17,10 +17,3 @@ function About() {
 }
 
 export default About;
-
-// NavLink
-// Link
-// useNavigate
-
-// useEffect
-// useRef
