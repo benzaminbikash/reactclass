@@ -1,8 +1,13 @@
 import React from "react";
-import { useLocation } from "react-router";
+import { useLocation, useParams } from "react-router";
 
 function ProductDetail() {
+  const params = useParams();
+  console.log(params.user);
+
   const data = useLocation();
+  console.log(data.pathname);
+
   const item = data.state;
   return (
     <div>
@@ -13,3 +18,6 @@ function ProductDetail() {
 }
 
 export default ProductDetail;
+
+// todo list
+// add , get, delete, update//

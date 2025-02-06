@@ -1,10 +1,9 @@
 import React from "react";
 
-export default function C(props) {
+export default function C({ data }) {
   return (
     <div>
-      <h1>This is c page.</h1>
-      <h2>{props.data}</h2>
+      <h1>This is c page {data}. </h1>
     </div>
   );
 }

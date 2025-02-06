@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
-import Navbar from "../components/Navbar";
 
 function Home() {
   const navigate = useNavigate();
@@ -22,7 +21,7 @@ function Home() {
           return (
             <div
               onClick={() =>
-                navigate(`productdetail/${item.id}`, {
+                navigate(`/productdetail/${item.id}`, {
                   state: item,
                 })
               }
