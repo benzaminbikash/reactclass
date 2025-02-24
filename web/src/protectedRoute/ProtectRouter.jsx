@@ -2,7 +2,7 @@ import React from "react";
 import { Navigate, Outlet } from "react-router";
 
 function ProtectRouter() {
-  let isLoggin = true;
+  let isLoggin = localStorage.getItem("token");
   return isLoggin ? <Outlet /> : <Navigate to="/" />;
 }
 

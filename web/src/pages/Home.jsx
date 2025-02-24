@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
+import { BASEURL } from "../constant/constast";
 
 function Home() {
   const navigate = useNavigate();
@@ -30,16 +31,17 @@ function Home() {
   };
 
   const handleDelete = async (id) => {
-    console.log(id);
-    const response = await fetch(
-      `https://programminginterviewquestionandanswer.vercel.app/api/v4/deletecategory/${id}`,
-      {
+    let data = confirm("Do you want to delete this category?");
+    if (data) {
+      const response = await fetch(`${BASEURL}v4/deletecategory/${id}`, {
         method: "DELETE",
-      }
-    );
-    await response.json();
-    fetchCategories();
+      });
+      await response.json();
+      fetchCategories();
+    }
   };
+
+  //programminginterviewquestionandanswer.vercel.app/api/v4/login
 
   return (
     <div className="p-6">

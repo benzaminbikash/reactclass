@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
+import { toast } from "react-toastify";
 
 function AddNew() {
   const [title, setTitle] = useState("");
@@ -23,7 +24,11 @@ function AddNew() {
     setLoading(false);
     const response = await data.json();
     if (response.status == "success") {
-      navigate("/");
+      // navigate("/");
+      toast.success("New Category Added", {
+        position: "top-center",
+        pauseOnHover: false,
+      });
     }
   };
 

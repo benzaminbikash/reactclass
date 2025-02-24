@@ -19,6 +19,9 @@ function UpdateNew() {
       `https://programminginterviewquestionandanswer.vercel.app/api/v4/updatecategory/${state._id}`,
       {
         method: "PUT", //update
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
         body: formData,
       }
     );
