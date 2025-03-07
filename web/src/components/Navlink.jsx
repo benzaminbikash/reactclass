@@ -7,8 +7,8 @@ function Navbar() {
       <h1>Logo</h1>
       <div className="flex  gap-10">
         <NavLink to="/">Home</NavLink>
-        <NavLink to="/about">About</NavLink>
-        <NavLink to="/contact">Contact</NavLink>
+        <NavLink to="/login">Login</NavLink>
+        <NavLink to="/signup">SignUp</NavLink>
       </div>
     </div>
   );

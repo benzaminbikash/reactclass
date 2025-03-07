@@ -1,22 +1,28 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router";
-import AddNew from "./pages/AddNew";
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Link,
+  NavLink,
+} from "react-router";
 import Home from "./pages/Home";
-import UpdateNew from "./pages/Updatepage";
-import RegistrationPage from "./pages/Register";
-import Profile from "./pages/Profile";
-import ProtectRouter from "./protectedRoute/ProtectRouter";
-AbortSignal;
+import Login from "./pages/Login";
+import SignUp from "./pages/SignUp";
+import Verify from "./pages/Verify";
+import Navbar from "./components/Navlink";
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<RegistrationPage />} />
-      <Route path="/addnew" element={<AddNew />} />
-      <Route path="/updatenew/:id" element={<UpdateNew />} />
-      <Route element={<ProtectRouter />}>
-        <Route path="/profile" element={<Profile />} />
-      </Route>
-    </Routes>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/verify" element={<Verify />} />
+      </Routes>
+    </Router>
   );
 }
 

@@ -3,14 +3,16 @@ import { createRoot } from "react-dom/client";
 import App from "./App";
 import "./index.css";
 import "./App.css";
-import { BrowserRouter } from "react-router";
 import { ToastContainer } from "react-toastify";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <BrowserRouter>
-      <App />
-      <ToastContainer />
-    </BrowserRouter>
+    <App />
+    <ToastContainer
+      position="top-center"
+      limit={1}
+      theme="dark"
+      hideProgressBar={true}
+    />
   </StrictMode>
 );
